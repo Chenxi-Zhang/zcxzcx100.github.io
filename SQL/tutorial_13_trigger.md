@@ -1,4 +1,4 @@
-#Trigger
+# Trigger
 
 ## Syntax
 ```MySQL
@@ -18,5 +18,3 @@ DROP TRIGGER [schema_name.]trigger_name
 
 
 ```
-
-##

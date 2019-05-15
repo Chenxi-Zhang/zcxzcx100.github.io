@@ -1,4 +1,4 @@
-#Lock
+# Lock
 
 ## Syntax
 ```MySQL
@@ -19,7 +19,7 @@ e.g.
 | | Query OK |
 
 ---
-#Transaction
+# Transaction
 ## Syntax
 ```MySQL
 START TRANSACTION | BEGIN [WORK]

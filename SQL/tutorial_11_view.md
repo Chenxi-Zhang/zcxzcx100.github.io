@@ -1,4 +1,4 @@
-#View
+# View
 SQL syntax: create view:
 ```MySQL
 CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]

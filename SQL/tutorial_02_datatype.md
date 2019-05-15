@@ -1,7 +1,7 @@
 # Create table with diff data types
 
 ## Number types:
-
+```MySQL
 DROP TABLE IF EXISTS table_int;
 CREATE TABLE table_int
 (
@@ -49,10 +49,10 @@ VALUES
 (1, 1),
 (1, 25);
 SELECT bin(t_bit1), bin(t_bit8) FROM table_bit;
-
+```
 
 ## Date and time types
-
+```MySQL
 DROP TABLE IF EXISTS table_datetime;
 CREATE TABLE table_datetime
 (
@@ -62,9 +62,10 @@ t_timestamp TIMESTAMP,
 t_time TIME,
 t_year YEAR
 );
-
+```
 
 ### Insert record
+```MySQL
 INSERT INTO table_datetime
 (t_date, t_datetime, t_timestamp, t_time, t_year)
 VALUES
@@ -76,10 +77,10 @@ SELECT * FROM table_datetime;
 YYYY-MM-DD HH:MM:SS / YY-MM-DD HH:MM:SS 
 YYYYMMDDHHMMSS / YYMMDDHHMMSS / YYYYMMDD/ YYMMDD
  */
-
+```
 
 ## String types
-
+```MySQL
 DROP TABLE IF EXISTS table_char;
 CREATE TABLE table_char
 (
@@ -111,9 +112,10 @@ CREATE TABLE table_binary
 t_binary BINARY(10),
 t_varbinary VARBINARY(10)
 );
-
+```
 
 ### Insert record
+```MySQL
 INSERT INTO table_char
 (t_char, t_varchar)
 VALUES
@@ -131,17 +133,18 @@ VALUES
 ('a\0', 'a\0'),
 ('1\01', '1\01');
 SELECT *, HEX(t_binary), HEX(t_varbinary) FROM table_binary;
-
+```
 
 ## Enum type
-
+```MySQL
 DROP TABLE IF EXISTS table_enum;
 CREATE TABLE table_enum
 (
 gender enum('M', 'F')
 );
-
+```
 ### Insert record
+```MySQL
 INSERT INTO table_enum
 (gender)
 VALUES
@@ -151,17 +154,18 @@ VALUES
 ('f'),
 (null);
 SELECT * FROM table_enum;
-
+```
 
 ## Set type
-
+```MySQL
 DROP TABLE IF EXISTS table_set;
 CREATE TABLE table_set
 (
 t_set SET('a', 'bb', 'ccc', 'dddd')
 );
-
+```
 ### Insert record
+```MySQL
 INSERT INTO table_set
 (t_set)
 VALUES
@@ -172,7 +176,7 @@ VALUES
 ('a,ccc,dddd'),
 ('a,a');
 SELECT * FROM table_set;
-
+```
 
 
 

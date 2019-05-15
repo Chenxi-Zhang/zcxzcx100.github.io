@@ -1,4 +1,4 @@
-#SQL mode
+# SQL mode
 
 ```MySQL
 SELECT @@sql_mode;

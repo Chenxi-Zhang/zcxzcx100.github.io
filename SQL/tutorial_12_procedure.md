@@ -1,4 +1,4 @@
-#Stored procedure
+# Stored procedure
     No return required.
 ## Syntax
 ```MySQL
@@ -59,7 +59,7 @@ SELECT @a;
 ```
 
 ---
-#Check procedure|function status
+# Check procedure|function status
 ```MySQL
 SHOW {PROCEDURE | FUNCTION} STATUS [LIKE 'pattern']
 SHOW CREATE {PROCEDURE | FUNCTION} sp_name
@@ -69,7 +69,7 @@ SELECT * FROM information_schema.routines WHERE ROUTINE_NAME='user_older_than'\G
 ```
 
 ---
-#Variable
+# Variable
 ## Declaration
 A declared variable only works in BEGIN END block and nested block.
 
@@ -115,7 +115,7 @@ DECLARE handler_type HANDLER FOR condition_value[,...] sp_statement
 ```
 
 ---
-#Cursor
+# Cursor
 ## Syntax
 ```MySQL
 DECLARE cursor_name CURSOR FOR select_statement
@@ -155,7 +155,7 @@ SELECT @x1, SUM(age) FROM user;
 ```
 
 ---
-#Conditional statements
+# Conditional statements
 ## IF
 ```MySQL
 IF search_condition THEN statement_list
@@ -205,7 +205,7 @@ END WHILE [end_label]
 ```
 
 ---
-#MySQL performance test
+# MySQL performance test
 
 ## Turn on Query Profile
 ```MySQL
