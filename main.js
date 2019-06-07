@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 var BlogService = /** @class */ (function () {
     function BlogService(http) {
         this.http = http;
-        this.baseUrl = 'https://api.github.com/repos/zcxzcx100/zcxzcx100.github.io/contents/blogs';
+        this.baseUrl = 'https://api.github.com/repos/zcxzcx100/zcxzcx100.github.io/contents';
         //   private token = 'a5cdf3332b933c89d578f34ca1d0947e6d62cd2d';
         this.blogSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.blogToDisplay = this.blogSubject.asObservable();
@@ -96,13 +96,13 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     // {path: '', redirectTo: 'blog', pathMatch: 'full'},
     {
-        path: 'blog',
+        path: 'blogs',
         children: [
             { path: '**', component: _blog_blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"] }
         ],
         component: _blog_blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"]
     },
-    { path: '**', redirectTo: 'blog' },
+    { path: '**', redirectTo: 'blogs' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -337,8 +337,8 @@ var BlogComponent = /** @class */ (function () {
     }
     BlogComponent.prototype.ngOnInit = function () {
         this.thisUrl = window.location.pathname.split('/').slice(1);
-        // this.loadBlogs(this.thisUrl);
-        this.render(['SQL', 'tutorial_01_DDL-DML.md']);
+        this.loadBlogs(this.thisUrl);
+        // this.render(['SQL', 'tutorial_01_DDL-DML.md']);
     };
     BlogComponent.prototype.loadBlogs = function (path) {
         var _this = this;
@@ -350,6 +350,7 @@ var BlogComponent = /** @class */ (function () {
         if (blog.type === 'dir') {
             this.thisUrl.push(blog.name);
             this.router.navigate(this.thisUrl.slice());
+            this.loadBlogs(this.thisUrl);
         }
         else {
             this.render(this.thisUrl.concat([blog.name]));
