@@ -84,7 +84,42 @@ function add2 () {
     return arguments[0] + arguments[1];
 }
 add2.length === 0;
+
+arguments.callee;  // when call a function recursively, use it to decouple the function name from the function itself. It's better to use anonmyous function. 
 ```
 2. call and apply
 3. execution context and scope chain
 4. this
+```JavaScript
+function fx() {
+    var that = this;
+    return function () {
+        return that;
+    };
+};
+// declare a new variable to store 'this' in closure, just in case the context change. 
+```
+5. closure
+```JavaScript
+function outer(v1) {
+    return function () {
+        return v1;
+    };
+};
+var fx = outer(5);
+fx();  // === 5;
+// Inner function can use the outer function variable because of the scope chain. The activation object of outer function is added to the scope chain of inner class. When the outer function returns, its context and its scope chain are destroyed but its activation object still has at least one referer: scope chain of inner function. 
+```
+6. 
+
+### Object-oriented
+```JavaScript
+function Animal () {};  // Animal is a function.
+var animal = new Animal();   // Animal is used as a constructor.
+Animal.prototype;   // Animal.prototype can be regarded as its class.
+function Dog() {};
+Dog.prototype = new Animal();   // Dog is inherited from Animal class.
+Animal.prototype.run = function () { return "Animal run."};
+var dog = new Dog();
+dog.run()  // === "Animal run"
+```
